@@ -6,7 +6,7 @@
     <div class="product">
         <img src="img/greyfog.jpg" alt="Nike Dunk GreyFog" width="250">
         <h2>Nike Dunk GreyFog</h2>
-        <h4>Q 1,250.00</h4>
+        <h4>Q 1,500.00</h4>
         <table>
             <tr>
                 <th>Marca</th>
@@ -14,7 +14,8 @@
             </tr>
             <tr>
                 <th>Nike</th>
-                <th>Gris con blanco</th>
+                <!-- Se modificó el precio y la desccripción del producto. -->
+                <th>Gris con blanco - Pandas</th>
             </tr>
             <tr>
                 <th>Deporte</th>
