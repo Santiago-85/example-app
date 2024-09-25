@@ -4,7 +4,7 @@
 
 @section('content')
     <div class="product">
-        <img src="img/greyfog.jpg" alt="Nike Dunk GreyFog" width="250">
+        <img src="/img/greyfog.jpg" alt="Nike Dunk GreyFog" width="250">
         <h2>Nike Dunk GreyFog</h2>
         <h4>Q 900.00</h4>
         <table>

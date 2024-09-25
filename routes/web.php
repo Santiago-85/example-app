@@ -1,4 +1,5 @@
 <?php
+use App\Http\Controllers\ContactoController;
 use App\Http\Controllers\PrimerController;
 use Illuminate\Support\Facades\Route;
 
@@ -20,4 +21,9 @@ Route::get('/Producto1', function () {
 Route::get('/Producto2', function () {
     return view('product2');
 });
+
+Route::get('/Contacto', [ContactoController::class, 'index']);
+Route::post('/Contacto', [ContactoController::class, 'send']);
+Route::get('/Contactado', [ContactoController::class, 'contacted'])->name('contactado');
+
 
