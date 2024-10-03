@@ -13,9 +13,9 @@
     </header>
 
     <nav>
-        <a href="/">Inicio</a>
+        <a href="/menu">Inicio</a>
         <a href="/categorias">Categorías</a>
-        <a href="/contacto">Contacto</a>
+        <a href="/Contacto">Contacto</a>
         <a href="/mision-vision">Misión - Visión</a>
     </nav>
 

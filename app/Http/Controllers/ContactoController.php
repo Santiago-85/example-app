@@ -11,7 +11,7 @@ class ContactoController extends Controller
 {
     public function index()
     {
-        return view('mis-views.contacto', ['contactos' => $contactos]);
+        return view('mis-views.contacto');
     }
 
     public function send(Request $request)

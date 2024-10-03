@@ -29,6 +29,6 @@
         </table>
     </div>
     <nav>
-        <a href="{{ url('/') }}">MENU</a>
+        <a href="{{ url('menu') }}">MENU</a>
     </nav>
 @endsection

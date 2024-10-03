@@ -14,7 +14,7 @@ Route::get('/', function () {
 });
 
 
-Route::get('/index', function () {
+Route::get('/menu', function () {
     return view('index');
 });
 
