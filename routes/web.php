@@ -30,3 +30,38 @@ Route::get('/Producto2', function () {
 Route::get('/Contacto', [ContactoController::class, 'index']);
 Route::post('/Contacto', [ContactoController::class, 'send']);
 Route::get('/Contactado', [ContactoController::class, 'contacted'])->name('contactado');
+
+//
+
+Route::get('/carrito/{id}', function ($id) {
+    // Obtener el carrito activo del usuario
+    $carrito = DB::table('carrito')
+        ->where('id_user', $id)
+        ->where('activo', 1)
+        ->first();
+
+    if ($carrito) {
+        // Obtener los productos del carrito
+        $productos = DB::table('detalle_carrito')
+            ->join('producto', 'detalle_carrito.id_producto', '=', 'producto.id_producto')
+            ->where('detalle_carrito.id_carrito', $carrito->id_carrito)
+            ->select('producto.nombre_producto')
+            ->get();
+
+        // Obtener el total de productos sumando manualmente
+        $totalProductos = $productos->count();
+
+        // Si prefieres calcular el total desde la base de datos, puedes hacerlo así:
+        // $totalProductos = DB::table('detalle_carrito')
+        //     ->where('id_carrito', $carrito->id_carrito)
+        //     ->count();
+
+        return response()->json([
+            'carrito' => $carrito,
+            'productos' => $productos,
+            'total_productos' => $totalProductos
+        ]);
+    } else {
+        return response()->json(['message' => 'Carrito no encontrado para el usuario.']);
+    }
+});
